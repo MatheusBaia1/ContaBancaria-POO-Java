@@ -22,6 +22,8 @@ Projeto simples de simulação de sistema bancário desenvolvido em Java com foc
 - Main: responsável pela interação com o usuário
 - SistemaBanco: camada de serviço responsável pelas operações
 - ContaBancaria: regras de negócio da conta
+- ContaCorrente: implementação com taxa de saque utilizando herança
+- ContaPoupanca: estrutura preparada para futuras melhorias
 
 ## Aprendizados
 
@@ -29,7 +31,6 @@ Projeto desenvolvido com foco em evolução para nível júnior, aplicando separ
 
 ## Próximas melhorias
 
-- Implementação de herança (Conta Corrente e Poupança)
 - Validações de entrada
 - Tratamento de exceções
 - Interface gráfica futura
