@@ -1,7 +1,7 @@
 package org.example;
 public class ContaBancaria {
 
-    private String numeroConta;
+    private final String numeroConta;
     private String titular;
     private double saldo;
 
@@ -27,27 +27,20 @@ public class ContaBancaria {
         return saldo;
     }
 
-    public void depositar(double valor) {
+    public boolean depositar(double valor) {
         if (valor > 0) {
             saldo += valor;
-            System.out.println("Deposito realizado com sucesso!");
+            return true;
         } else {
-            System.out.println("Valor de depósito inválido!");
+            return false;
         }
     }
-
-    public void sacar(double valor) {
+    public boolean sacar(double valor) {
         if (valor > 0 && valor <= saldo) {
             saldo -= valor;
-            System.out.println("Saque realizado com sucesso!");
+            return true;
         } else {
-            System.out.println("Saque não permitido!");
+            return false;
         }
-    }
-
-    public void exibirDados() {
-        System.out.println("Número da Conta: " + numeroConta);
-        System.out.println("Titular: " + titular);
-        System.out.printf("Saldo: R$ %.2f%n", saldo);
     }
 }

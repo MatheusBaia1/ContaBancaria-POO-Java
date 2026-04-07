@@ -7,8 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         ContaBancaria conta = new ContaBancaria("93102-1", "Matheus Baia");
-
-        conta.exibirDados();
+        SistemaBanco sistema = new SistemaBanco(conta);
 
         int opcao;
 
@@ -16,7 +15,7 @@ public class Main {
             System.out.println("\n===== MENU =====");
             System.out.println("1 - Depositar");
             System.out.println("2 - Sacar");
-            System.out.println("3 - Exibir dados");
+            System.out.println("3 - Exibir saldo");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
 
@@ -27,17 +26,29 @@ public class Main {
                 case 1:
                     System.out.print("Digite o valor do depósito: R$ ");
                     double deposito = scanner.nextDouble();
-                    conta.depositar(deposito);
+
+                    if (sistema.executarDeposito(deposito)) {
+                        System.out.println("Depósito realizado com sucesso!");
+                        System.out.println("Saldo atual: R$ " + sistema.mostrarSaldo());
+                    } else {
+                        System.out.println("Valor inválido!");
+                    }
                     break;
 
                 case 2:
                     System.out.print("Digite o valor do saque: R$ ");
                     double saque = scanner.nextDouble();
-                    conta.sacar(saque);
+
+                    if (sistema.executarSaque(saque)) {
+                        System.out.println("Saque realizado com sucesso!");
+                        System.out.println("Saldo atual: R$ " + sistema.mostrarSaldo() );
+                    } else {
+                        System.out.println("Saque inválido ou saldo insuficiente!");
+                    }
                     break;
 
                 case 3:
-                    conta.exibirDados();
+                    System.out.println("Saldo atual: R$ " + sistema.mostrarSaldo());
                     break;
 
                 case 0:
