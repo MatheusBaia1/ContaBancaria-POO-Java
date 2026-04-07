@@ -5,8 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
-        ContaBancaria conta = new ContaBancaria("93102-1", "Matheus Baia");
+        ContaBancaria conta = new ContaPoupanca("93102-1", "Matheus Baia");
         SistemaBanco sistema = new SistemaBanco(conta);
 
         int opcao;
@@ -20,6 +19,7 @@ public class Main {
             System.out.print("Escolha uma opção: ");
 
             opcao = scanner.nextInt();
+
 
             switch (opcao) {
 
@@ -40,7 +40,7 @@ public class Main {
                     double saque = scanner.nextDouble();
 
                     if (sistema.executarSaque(saque)) {
-                        System.out.println("Saque realizado com sucesso!");
+                        System.out.println("Saque realizado com sucesso no valor de " +saque);
                         System.out.println("Saldo atual: R$ " + sistema.mostrarSaldo() );
                     } else {
                         System.out.println("Saque inválido ou saldo insuficiente!");

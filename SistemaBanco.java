@@ -4,6 +4,10 @@ public class SistemaBanco {
 
     private final ContaBancaria conta;
 
+    public void executarOpcao(int opcao) {
+
+    }
+
     public SistemaBanco(ContaBancaria conta) {
         this.conta = conta;
     }

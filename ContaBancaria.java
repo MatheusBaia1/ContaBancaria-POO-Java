@@ -1,5 +1,5 @@
 package org.example;
-public class ContaBancaria {
+public abstract class ContaBancaria {
 
     private final String numeroConta;
     private String titular;
