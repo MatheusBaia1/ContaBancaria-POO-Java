@@ -1,4 +1,5 @@
 package org.example;
+
 public abstract class ContaBancaria {
 
     private final String numeroConta;
@@ -31,16 +32,15 @@ public abstract class ContaBancaria {
         if (valor > 0) {
             saldo += valor;
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
+
     public boolean sacar(double valor) {
         if (valor > 0 && valor <= saldo) {
             saldo -= valor;
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 }
